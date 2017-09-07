@@ -2,6 +2,9 @@ const http = require('http');
 const config = require('./config.json');
 const url = 'http://api.openweathermap.org/data/2.5/weather';
 
+const print = (body) => {
+    console.log(`The temperature in ${body.name} is ${body.main.temp}.`);
+}
 
 exports.get = location => {
     http.get(`${url}?q=${location}&APPID=${config.openWeatherApiAppId}`, (res) => {
@@ -13,7 +16,7 @@ exports.get = location => {
         res.on('end', () => {
         try {
             const parsedData = JSON.parse(rawData);
-            console.log(parsedData.main.temp);
+            print(parsedData);
         } catch (e) {
             console.error(e.message);
         }

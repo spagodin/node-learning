@@ -1,4 +1,6 @@
 
 const getWeather = require('./getWeather.js');
 
-getWeather.get('knoxville tn');
+const locations = process.argv.slice(2);
+locations.forEach(getWeather.get);
+
