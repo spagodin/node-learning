@@ -6,7 +6,7 @@ The `config.json` file should follow the following structure:
 
 ```
 {
-    ""openWeatherApiAppId": "<YOUR_API_KEY_HERE>"
+    "openWeatherApiAppId": "<YOUR_API_KEY_HERE>"
 } 
 
 ```
